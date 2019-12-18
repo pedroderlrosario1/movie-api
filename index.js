@@ -1,24 +1,22 @@
 const bodyParser = require('body-parser')
 const express = require('express')
-const Movies = require('./models')
+const models = require('./models')
 
 
 const app = express()
 
 app.get('/movies', async (request, response) => {
-  const movies = await models.Movies.findAll({
-    where: { directors: request.params.title }
-  })
-  
+  const movies = await models.Movies.findAll()
+
   return movies.length
     ? response.send(movies)
     : response.sendStatus(404)
 })
 
-app.get('/movies/:title', async(request, response) => {
+app.get('/movies/:ID', async(request, response) => {
   
-  const matchingmovies = await Movies.findAll({
-    where: {ID: request.params.title}
+  const matchingmovies = await movies.Movies.findAll({
+    where: {id: request.params.title}
   })
 
 return matchingmovies.length
