@@ -1,0 +1,18 @@
+CREATE DATABASE movies;
+
+USE movies;
+
+CREATE TABLE movies(
+id INT AUTO_INCREMENT,
+title VARCHAR(225),
+directors VARCHAR(225), 
+release date VARCHAR(225),
+rating VARCHAR(225),
+run Time VARCHAR(225),
+genres VARCHAR(225),
+createdAt DATETIME DEFAULT NOW(),
+updatedAt DATETIME DEFAULT NOW() ON UPDDATE NOW(),
+deletedAt DATETIME
+PRIMARY KEY(id),
+
+)
